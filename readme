@@ -10,3 +10,7 @@ deverão estar de acordo com a dimensão do mundo.
 
 Existe um erro no programa que não permite aceitar dimensões de mundo
 com coodernadas x diferentes de y (só aceita mundos quadrados).
+
+O 'exemplo_search.py' mostra como é feita a pesquisa breadth first no mundo simulado.
+Convém que o mundo não seja muito grande pois o número de percursos pesquisados aumenta
+exponencialmente com a dimensão do mundo.
