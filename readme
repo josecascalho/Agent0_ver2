@@ -8,6 +8,11 @@ Na pasta input_files, estão os ficheiros com as coordenadas relativamente
 às posições dos obstáculos, das bombas e do objetivo. Note que essas posições
 deverão estar de acordo com a dimensão do mundo.
 
+Um dos ficheiros é o ficheiro weigh_file.txt. Este ficheiro contém para cada
+casa do mundo o valor do peso no formato x y w. Todas as posições do mundo 
+devem estar representadas neste ficheiro. O programa não permite pesos 
+inferiores a 1. 
+
 Existe um erro no programa que não permite aceitar dimensões de mundo
 com coodernadas x diferentes de y (só aceita mundos quadrados).
 

@@ -3,7 +3,7 @@ import ast
 import random
 import copy
 
-# In this example it is used the BREADFIRST.
+# In this example it is used the BREADTH FIRST.
 
 class Client:
     def __init__(self,HOST='127.0.0.1',PORT=50000):

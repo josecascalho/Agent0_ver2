@@ -2,7 +2,9 @@ import client
 import ast
 import random
 
+
 class Client:
+    '''The class interact with the server sending a string encoded and receive a return of 2048 bits.'''
     def __init__(self,HOST='127.0.0.1',PORT=50000):
         self.host = HOST
         self.port = PORT
@@ -25,8 +27,9 @@ class Client:
         time.sleep(sleep_t)
         return msg
 
-#AUXILIAR
+
 def getPos():
+    '''Return the actual position of the agent. '''
     msg = c.execute("info", "position")
     pos = ast.literal_eval(msg)
     # test
@@ -34,6 +37,7 @@ def getPos():
     return pos
 
 def getMap():
+    '''Return the map of weights: A matrix (x,y) with x the columns and y the rows!'''
     msg = c.execute("info", "map")
     w_map = ast.literal_eval(msg)
     # test
@@ -54,7 +58,8 @@ def getObstacles():
 
 #RETURN A LIST OF NEXT POSITIONS (not considering the obstacles!)
 def getNextPositions(pos):
-    '''Return the possible next positions of the agent, given the present position'''
+    '''Return the possible next positions of the agent, given the present position of the agent and considering that the
+    walls of the model are an obstacle. If it finds an wall than it will be at the same place.'''
     next_pos = []
     max_coord = getMaxCoord()
     if pos[0] + 1 < max_coord[0]:
@@ -75,15 +80,18 @@ def main():
         #  Get information of the world
         #  Print the obstacles position
         obstacles = getObstacles()
+        #Test: To confirm that the first parameter in matrix is column and the sencond is the row.
         print("Obstacles 0 1 =", obstacles[0][1])
         # Get information of the weights for each step in the world ...
         map = getMap()
+        #Test: The same from above.
         print("Example:Weight at x=1 and y=2:", map[1][2])
         # START A CYCLE TO BUILD A LIST OF ALL NEXT STATES ...
 
         # 1-Get the position of the agent
         pos = getPos()
         # 2-Add to the list of positions already tested
+        # (to be implemented)
         # 3-Get list of possible positions from the actual position
         print(getNextPositions(pos))
         # 4-Remove from the list the obstacles!
