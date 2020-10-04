@@ -1,7 +1,7 @@
 import client
 import ast
 import random
-c = client.Client('127.0.0.1', 50000)
+c = client.Client('127.0.0.1', 50001)
 res = c.connect()
 random.seed() #To become true random, a different seed is used! (clock time)
 
