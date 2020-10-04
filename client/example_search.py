@@ -6,7 +6,7 @@ import copy
 # In this example it is used the BREADTH FIRST.
 
 class Client:
-    def __init__(self,HOST='127.0.0.1',PORT=50000):
+    def __init__(self,HOST='127.0.0.1',PORT=50001):
         self.host = HOST
         self.port = PORT
     def print_message(self,data):

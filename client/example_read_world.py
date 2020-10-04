@@ -5,7 +5,7 @@ import random
 
 class Client:
     '''The class interact with the server sending a string encoded and receive a return of 2048 bits.'''
-    def __init__(self,HOST='127.0.0.1',PORT=50000):
+    def __init__(self,HOST='127.0.0.1',PORT=50001):
         self.host = HOST
         self.port = PORT
     def print_message(self,data):
