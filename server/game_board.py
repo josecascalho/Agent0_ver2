@@ -177,7 +177,7 @@ class GameBoard(tk.Frame):
         self.color1 = color1
         self.color2 = color1
         self.objects = []
-
+        self.parent = parent
         canvas_width = columns * size
         canvas_height = rows * size
         #compreension of the matrix
@@ -205,7 +205,8 @@ class GameBoard(tk.Frame):
     def quit(self):
         """ handle button click event and output text from entry area"""
         print('quiting!')  # do here whatever you want
-        sys.exit(1)
+        self.parent.destroy()
+        sys.exit()
 
     def start(self):
         pass

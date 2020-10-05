@@ -112,6 +112,7 @@ def main():
             else:
                 c.execute("command", "right")
     input("Waiting for return!")
+
 #STARTING PROGRAM
 print("Starting client!")
 c = client.Client('127.0.0.1', 50001)
