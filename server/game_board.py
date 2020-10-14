@@ -536,7 +536,7 @@ class GameBoard(tk.Frame):
         #front = self.getplaceahead(object)
         for ag in self.objects:
             if (ag.get_x() == coordinates[0] and ag.get_y() == coordinates[1]):
-                print('There is something in postion:',coordinates)
+                #print('There is something in postion:',coordinates)
                 if isinstance(ag,Player):
                     res.append('player')
                 elif isinstance(ag,Bomb):

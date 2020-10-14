@@ -22,11 +22,14 @@ class Client:
     def execute(self,action,value,sleep_t = 0.5):
         self.s.sendall(str.encode(action+" "+value))
         data = self.s.recv(2048)
-        print('Received', repr(data))
+        #print('Received', repr(data))
         msg = data.decode()
         #message(ast.literal_eval(data.decode()))
-        time.sleep(sleep_t)
+        self.sleeping(sleep_t)
         return msg
+    def sleeping(self,sleep_t = 0.5):
+        time.sleep(sleep_t)
+
 if __name__=="__main__":
     client = Client(HOST,PORT)
     res = client.connect()

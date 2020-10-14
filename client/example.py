@@ -2,6 +2,7 @@ import client
 import ast
 import random
 
+
 def reactive_example_1(c,res:int):
     if res != -1:
         while True:
@@ -40,7 +41,7 @@ def main():
     c = client.Client('127.0.0.1', 50001)
     res = c.connect()
     random.seed()  # To become true random, a different seed is used! (clock time)
-    #reactive_example_2()
-    reactive_example_2(c,res)
+    reactive_example_1(c,res)
+    #reactive_example_2(c,res)
 
 main()
