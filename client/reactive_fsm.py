@@ -29,12 +29,7 @@ class ReactiveFSM:
             self.state = PARAR
         elif self.objects[0] == 'obstacle' or self.objects[0] == 'bomb':
             self.state = ULTRAPASSA_OBST_ESQ
-        # Continua no mesmo estado ou salta para estado com obst imaginario na esquerda
-        else:
-            res = random.randint(0, 4)
-            if res >= 3:
-                self.state = ULTRAPASSA_OBST_ESQ
-
+ Q
     def ultrapassa_obst_esq_exe(self):
         self.c.execute("command","left")
 
