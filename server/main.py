@@ -235,8 +235,9 @@ class Server(BaseException):
 
 if __name__== "__main__":
     #Host and Port
+
     if len(sys.argv) == 3:
-        host, port = sys.argv[1], int(sys.argv[2])
+        host, port = sys.argv[1],int(sys.argv[2])
     else:
         host = '127.0.0.1'
         port = 50001
@@ -298,12 +299,23 @@ if __name__== "__main__":
     #print("Starting the server!")
     #server = s.Server()
     # PLAYER PLAYER:
-    # Initialize player ...
-    object = gb.Player(images_directory,'player', 0, 0, 'south', 'front', True)
-    object.set_home((0,0))
+    player_pos_list =[]
+    player_pos_file = './input_files/player_pos_file.txt'
+    f = open(player_pos_file)
+    for l in f.readlines():
+        l = l.split(",")
+        if len(l) > 1:
+            player_pos_list.append((int(l[0]), int(l[1])))
+    if len(player_pos_list) == 0:
+        player_pos_list.append((0,0))
+
+    # initialize_obstacles(images_directory,[(0,1),(4,6),(7,6),(6,7),(8,8)])
+    f.close()  # Initialize player ...
+    object = gb.Player(images_directory,'player', player_pos_list[0][0], player_pos_list[0][1], 'south', 'front', True)
+    object.set_home((player_pos_list[0][0],player_pos_list[0][1]))
     object.close_eyes()
     # Add player ...
-    board.add(object, 0, 0)
+    board.add(object, player_pos_list[0][0], player_pos_list[0][1])
     root.update()
     # Loop ...
     server.loop()
